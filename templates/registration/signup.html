@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load static %}
+{% load widget_tweaks %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>ثبت نام</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+        </div>
+    </main>
+    <div class="wrapper">
+        <form action="" method="post" class="login-design">
+            {% csrf_token %}
+                <div class="form-group">
+                    <label for="exampleInputPassword1">نام کاربری</label>
+            {% render_field form.username|add_class:"form-control" placeholder="نام کاربری" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">ایمیل</label>
+            {% render_field form.email|add_class:"form-control" placeholder="ایمیل" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">رمز عبور</label>
+            {% render_field form.password1|add_class:"form-control" placeholder="رمز عبور" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleInputPassword1">تکرار رمز عبور</label>
+            {% render_field form.password2|add_class:"form-control" placeholder="تکرار رمز عبور" %}
+                </div>
+            <br>
+            {{ form.errors }}
+            <button type="submit" class="btn btn-primary">ورود</button>
+                <p>اگر حساب کاربری دارید <a href="{% url 'login' %}">وارد </a> شوید</p>
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>

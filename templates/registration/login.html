@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>ورود</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    </main>
+    <div class="wrapper">
+        <form action="" method="post" class="login-design">
+            {% csrf_token %}
+              <div class="form-group">
+                <label for="exampleInputEmail1">نام کاربری</label>
+                {% render_field form.username|add_class:"form-control" placeholder="نام کاربری" %}
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">رمز عبور</label>
+                  {% render_field form.password|add_class:"form-control" placeholder="رمز عبور" %}
+              </div>
+            {% if form.errors %}
+                <p class="Erorr">نام کاربری یا رمز عبور اشتباه میباشد</p>
+            {% endif %}
+                <button type="submit" class="btn btn-success">ورود</button>
+                <p>اگر حساب کاربری ندارید همین حالا <a href="{% url 'register' %}">ثبت نام</a> کنید</p>
+                <p>فراموشی رمز؟ <a href="{% url 'password_reset' %}">کلیک کنید</a></p>
+
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>

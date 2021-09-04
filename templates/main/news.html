@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>خبر های خیریه</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class='main-news'>
+        <div class='to-main-news1'>
+        <img src='{{profile.image.url}}'>
+                                    <!-- Card -->
+                        {% for news in post %}
+                            <div class='news-post'>
+                                <div class='to-news-post1'>
+                                    <img src='{{news.image.url}}'>
+                                </div>
+                                <div class='to-news-post2'>
+                                    <p style='font-size: 25px;'>{{news.title}}</p>
+                                    <p>{{news.body|safe|truncatechars:150}}</p>
+                                    <a href='{{news.get_absolute_url}}' class='botton-news'>ادامه خبر</a>
+                                </div>
+                            </div>
+                        {% endfor %}
+                        <!-- Card -->
+        </div>
+        <div class='to-main-news2'>
+            <div class='search-box'>
+                <h5>جستجو کردن</h5>
+                <form class="example" method='GET' action="{% url 'search' %}" style="max-width:300px">
+                <input type="text" placeholder="جستجو کردن ..." name="q">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class='search-box'>
+                <h5> دسته بندی ها</h5>
+                {% for cate in category %}
+                <h6><a href='{{cate.get_absolute_url}}'>{{cate.name}}</a></h6>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

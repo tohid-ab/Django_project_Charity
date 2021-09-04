@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>پروفایل</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    </main>
+    <div class="wrapper-profile">
+        <form action="" method="post" style="text-align: right;" align="center">
+        <div class="card" style="width: 18rem; margin: auto;margin-top: 10px;margin-bottom: 10px;">
+            {% if user.profile.image.url == user.profile.image.url%}
+                <img class="card-img-top" src="{{ user.profile.image.url }}" alt="Card image cap">
+            {% else %}
+                <img class="card-img-top" src="{% static 'img/profile.jpg' %}" alt="Card image cap">
+            {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{ user.username }}</h5>
+                <h5 style="font-size: 0.9rem;"></h5>
+                <h5 style="font-size: 0.9rem;"></h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><i class="far fa-envelope"></i> : {{ user.email }}</li>
+            <li class="list-group-item"><i class="fas fa-user"></i> نام کاربری : {{ user.username }}</li>
+            <li class="list-group-item">
+                {% if request.user.is_superuser %}
+                    <i class="far fa-user"></i> وضعیت کاربر : ابر کاربر
+                    {% else %}
+                    <i class="far fa-user"></i> وضعیت کاربر: معمولی
+                {% endif %}
+            </li>
+          <li class="list-group-item">
+              <a href="{% url 'image_change' %}">تغییر عکس حساب</a>
+          </li>
+          </ul>
+          <div class="card-body">
+            <a href="{% url 'password_change' %}" class="card-link"> تغییر رمزعبور</a><br><br>
+            <a href="{% url 'profile_change' %}" class="card-link"> ویرایش اطلاعات کاربری</a><br><br>
+            <a class="card-link btn btn-danger" href="{% url 'logout' %}">خروج از حساب</a>
+          </div>
+        </div>
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>

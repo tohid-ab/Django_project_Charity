@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>ورود</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    </main>
+    <div class="wrapper-profile">
+        <form action="" method="post" class="login-design-profile">
+            {% csrf_token %}
+            <div class="profile-style"><img src="{{ user.profile.image.url }}" alt=""></div>
+            <div class="profile-text">
+                <div class="to-profile" style="width: 75%">
+                 ویرایش نام:<h3>{% render_field form.first_name|add_class:"form-control" placeholder="نام کاربری" %}</h3><br />
+                 ویرایش نام خانوادگی:<h3>{% render_field form.last_name|add_class:"form-control" placeholder="نام کاربری" %}</h3><br />
+                ویرایش ایمیل:<h5 style="font-size: 0.9rem;">{% render_field form.email|add_class:"form-control" placeholder="ایمیل" %}</h5>
+                </div>
+                {% if request.user.is_superuser %}
+                    {{ form.is_active }}
+                    {{ form.is_staff }}
+                    {{ form.is_superuser }}
+                    {% else %}
+                    {{ form.is_active }}
+                {% endif %}
+                <div class="to-profile" style="width: 25%">
+                        <div style="content-visibility: hidden;">
+                            {{ form.username }}
+                            {{ form.last_login }}
+                            {{ form.date_joined }}
+                        </div>
+                    <button type="submit" value="submit" class="btn btn-primary">ویرایش</button>
+                    {{ form.errors }}
+                </div>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>

@@ -1,0 +1,129 @@
+{% load static %}
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>دستان مهربان کوی رضوان</title>
+    <!-- MDB icon -->
+    <link rel="icon" href="{% static 'img/rdrgfgr.png' %}" type="image/x-icon">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Material Design Bootstrap -->
+    <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
+    <!-- Your custom styles (optional) -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Your custom styles2 (optional) -->
+    <link rel="stylesheet" href="{% static 'css/style2.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static "fontawesome/css/all.min.css" %}" />
+
+</head>
+<body>
+    <div class="background">
+<!--Navbar-->
+            <nav class="navbar navbar-expand-lg navbar-dark primary-color" id="heaader">
+                <!-- Navbar brand -->
+                <a class="navbar-brand" href="#"></a>
+                <!-- Collapse button -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+                        aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Collapsible content -->
+                <div class="collapse navbar-collapse" id="basicExampleNav">
+                    <!-- Links -->
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'home' %}"><img src="{% static 'img/rdrgfgr.png' %}" alt="" class="img-logo"></a>
+                        </li>
+                        <li class="nav-item txt">
+                            <a class="nav-link" href="{% url 'home' %}">دستان مهربان کوی رضوان</a>
+                        </li>
+                        <li class="nav-item txt">
+                            <a class="nav-link" href="#">فطریه آنلاین</a>
+                        </li>
+                        <li class="nav-item txt">
+                            <a class="nav-link" href="#">خدمات حمایتی</a>
+                        </li>
+                        <li class="nav-item txt">
+                                {% if  user.is_authenticated %}
+                                    <details>
+                                        <summary class="nav-link">
+                                            {{ user }} <i class="fas fa-sort-down"></i>
+                                        </summary>
+                                        <div class="detail-suumer">
+                                        <p class="nav-link"><a href="{% url 'profile' %}">پروفایل</a></p>
+                                        <p class="nav-link"><a href='{% url 'logout' %}'>خروج</a></p>
+                                        </div>
+                                    </details>
+                                {% else %}
+                                    <p class="nav-link"><a style='color:white' href="{% url 'register' %}">ثبت نام</a>|<a style='color:white' href="{% url 'login' %}">ورود</a></p>
+                                {% endif %}
+                        </li>
+                        <li class="nav-item txt">
+                            <a class="nav-link" href="{% url 'news' %}">بلاگ</a>
+                        </li>
+                        <!-- Dropdown -->
+                        <li class="nav-item txt dropdown">
+                            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">ارتباط با ما </a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink" style="text-align: right;">
+                                <a class="dropdown-item" href="#">درباره ما</a>
+                                <a class="dropdown-item" href="#">راه های ارتباطی</a>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+<!--/.Navbar-->
+    {% block content %}
+    
+    {% endblock content %}
+</body>
+    <footer class="bg-light text-center text-lg-start">
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: #303745">
+            <p class="txt-footer" style="text-align: center;direction: rtl">تمامی حقوق اين وب سايت برای خيریه دستان مهربان کوی رضوان محفوظ می باشد | طراحي وب سایت توسط <a href="http://tohid-design.ir/" style="color: #2ecc71;">توحید دیزاین</a> © Copyright 2020 - 2021</p>
+            <hr style="color: #9ea2a2">
+            <button type="button" class="btn btn-pink btn-floating">
+                <i class="fab fa-instagram"></i>
+            </button>
+            <button type="button" class="btn btn-green btn-floating">
+                <i class="fab fa-whatsapp"></i>
+            </button>
+            <button type="button" class="btn btn-blue btn-floating">
+                <i class="fab fa-telegram"></i>
+            </button>
+        </div>
+        <!-- Copyright -->
+        <div class="fixed-action-btn smooth-scroll" style="bottom: 45px; right: 24px;">
+            <a href="#heaader" class="btn-floating btn-large red">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+
+
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="{% static 'js/popper.min.js' %}"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
+<!-- Your custom scripts (optional) -->
+<script type="text/javascript"></script>
+</body>
+</html>

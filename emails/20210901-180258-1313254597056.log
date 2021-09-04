@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:9090
+From: webmaster@localhost
+To: abriantohid55@gmail.com
+Date: Wed, 01 Sep 2021 13:32:58 -0000
+Message-ID: <163050317880.10744.17542565908746162037@tohid>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:9090.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:9090/accounts/reset/MQ/asb64y-c6d19d454e6ceacaff164484afa8a82e/
+
+Your username, in case you’ve forgotten: admin
+
+Thanks for using our site!
+
+The 127.0.0.1:9090 team
+
+
+
+-------------------------------------------------------------------------------

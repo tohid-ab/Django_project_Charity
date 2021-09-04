@@ -1,0 +1,612 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Sahel, serif;
+
+}
+
+@font-face{font-family:Sahel;src:url(../fonts/Sahel-Bold.eot) format("eot");src:url(../fonts/Sahel.ttf) format("ttf");src:url(../fonts/Sahel.woff) format("woff");font-weight:normal}
+
+.background{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    background-image: url("../img/bg1.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-news{
+    max-width: 100%;
+    height: auto;
+    width: 100%;
+    background-color: white;
+}
+
+.background-about{
+    max-width: 100%;
+    height: 799px;
+    width: 100%;
+    background-image: url("../img/kids.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.background-call{
+    max-width: 100%;
+    height: 799px;
+    width: 100%;
+    background-image: url("../img/bg6.jpg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.navbar{
+    background: none !important;
+    box-shadow: none !important;
+}
+
+.navbar-news{
+    background-color: #303745 !important;
+    margin-bottom: 2rem;
+}
+
+.navbar-nav {
+    margin: auto !important;
+    display: flex;
+}
+
+.mt-5{
+    margin-top: 0 !important;
+}
+
+.txt-box{
+    border-bottom: 2px solid #5dc2aa;
+    width: auto;
+    padding: 12px 0;
+    display: block;
+    margin-left: auto;
+}
+
+.img-news img{
+    height: 37vh;
+    image-rendering: pixelated;
+}
+
+.img-logo{
+    width: 100px;
+}
+
+.txt-time{
+    color: #bdbdbd;
+    font-size: 12px;
+}
+
+.txt-nnews{
+    text-align: right;
+}
+
+.category{
+    position: absolute;
+    top: 13px;
+    right: 13px;
+    border-radius: 7px;
+    width: 46px;
+    text-align: center;
+    color: white;
+    border: 1px solid white;
+}
+
+.main-news{
+    width: 100%;
+    height: auto;
+    background-color: #F9F9FF;
+    position: relative;
+    padding: 15px;
+    display: inline-flex;
+    direction: rtl;
+    text-align: right;
+}
+
+.to-main-news1{
+    width: 75%;
+    padding: 15px;
+    height: auto;
+    margin: 0 18px;
+}
+
+.to-main-news1 img{
+  width: 186px;
+  border-radius: 6px;
+}
+
+.to-news-post2{
+    padding: 0 27px;
+}
+
+.botton-news{
+  float: left;
+  margin-left: 2rem;
+  padding: 9px;
+  color: white;
+  background-color: #5dc2aa;
+  border-radius: .25rem;
+}
+
+.to-main-news2{
+    width: 25%;
+    height: auto;
+}
+
+.news-post{
+    display: flex;
+    padding: 10px;
+    box-shadow: 0 0 10px #d7d7d7;
+    border-radius: .25rem;
+    border-right: 4px solid #33b5e5;
+    margin-bottom: 30px;
+}
+
+.search-box{
+    background-color: white;
+    box-shadow: 0 0 19px #d7d7d7;
+    border-radius: 13px;
+    height: auto;
+    padding: 23px 39px;
+    margin-bottom: 30px;
+}
+
+.search-box h6{
+    color: #626262;
+}
+
+.login-design{
+  direction: rtl;
+  max-width: 377px;
+  padding: 15px 35px 45px;
+  margin: 60px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px #dddddd;
+  text-align: center;
+  border-radius: 11px;
+}
+
+.wrapper-profile{
+    width: 100%;
+    height: auto;
+}
+
+.login-design-profile{
+    width: 75%;
+    display: flex;
+    height: auto;
+    margin: auto;
+    direction: rtl;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    border-radius: 9px;
+    box-shadow: 0 0 5px grey;
+}
+
+.profile-style{
+    width: 25%;
+    height: auto;
+    margin: 5px;
+    text-align: center;
+}
+
+.profile-style img{
+    width: 50%;
+    border-radius: 100%;
+    box-shadow: 0 5px 10px gray;
+    height: 17vh;
+}
+
+.profile-text{
+    width: 75%;
+    height: auto;
+    margin: 5px;
+    text-align: right;
+    padding-right: 20px;
+    display: inline-flex;
+}
+
+
+.user_input{
+    border: none;
+    border-bottom: 1px solid gray;
+    margin: 30px 0;
+}
+
+.user_inpute{
+    border: 1px solid gray;
+    margin: 30px 0;
+    max-width: 100%;
+}
+
+.submittttt{
+    float: left;
+    background: #5dc2aa;
+    border: none;
+    color: white;
+    padding: 5px 19px;
+    border-radius: .25rem;
+}
+
+.search-box h6:hover{
+    color: #22bf6e;
+}
+form.example input[type=text] {
+  padding: 10px;
+  font-size: 17px;
+  border: none;
+  float: right;
+  width: 80%;
+  border-radius: 0 13px 13px 0;
+  background: #f1f1f1;
+}
+
+form.example button {
+  float: right;
+  width: 20%;
+  padding: 10px;
+  background: #5dc2aa;
+  color: white;
+  font-size: 17px;
+  border:none;
+  border-radius: 13px 0 0 13px;
+  cursor: pointer;
+}
+
+form.example button:hover {
+  background: #5dc2aa;
+}
+
+form.example::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.to-news{
+    background-color: #303745;
+    direction: rtl;
+}
+
+.to-news-2{
+    background-color: white;
+    height: 61vh;
+    padding-top: 50px;
+}
+
+.txt{
+    margin-top: 30px;
+    padding: 0 19px;
+}
+/*main*/
+.box-body div.txt-name {
+    text-align: center;
+    font-size: 66px;
+    margin: auto;
+    margin-top: 36px;
+    color: white;
+    text-shadow: 0 4px 5px #2e2e2e;
+}
+
+.box-body div.txt-name-about {
+    text-align: center;
+    font-size: 66px;
+    margin: auto;
+    margin-top: 12rem;
+    color: white;
+    text-shadow: 0 4px 5px #2e2e2e;
+}
+.box-body div.txt-name-call {
+    text-align: center;
+    font-size: 66px;
+    margin: auto;
+    margin-top: 12rem;
+    color: white;
+    text-shadow: 0 4px 5px #2e2e2e;
+}
+
+.box-body div.txt-ash {
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    text-shadow: 0 2px 3px black;
+}
+
+.txt-ash-call {
+    text-align: center;
+    color: white;
+    font-size: 19px;
+    text-shadow: 0 2px 3px black;
+}
+
+.boys img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3rem;
+}
+
+.txt-name img{
+    width: 220px;
+}
+
+.image-logo{
+    width: 231px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.icones{
+    text-align: center;
+}
+
+h1 {
+    font-size: 4rem;
+}
+.icones::before,
+.icones::after {
+    display: inline-block;
+    content: "";
+    border-top: 0.2rem solid #5dc2aa;
+    width: 4rem;
+    margin: -14px 0.5rem;
+    transform: translateY(-1rem);
+}
+
+.call-icn{
+    text-align: center;
+    font-size: 54px;
+    color: #4285f4;
+    margin-bottom: 8rem;
+}
+.tafrif{
+    text-align: center;
+    direction: rtl;
+    font-size: 21px;
+    color: #747474;
+}
+
+.txt-li{
+    list-style-type: none;
+    text-align: right;
+    margin-right: 5rem;
+    margin-top: 1rem;
+    direction: rtl;
+}
+
+.txt-moassese{
+    text-align: right;
+    font-size: 40px;
+    margin-top: 2rem;
+}
+
+.about-rezvan{
+    margin-bottom: 2rem;
+}
+.about-rezvan-call{
+    background-image: url(../img/wp6608513.jpg);
+    background-size: cover;
+    height: 67vh;
+    padding: 91px 0;
+}
+.call-rezvan{
+    margin-bottom: 2rem;
+}
+
+.txt-kheyriye{
+    text-align: right;
+}
+
+.progces{
+    text-align: right;
+    font-size: 16px;
+    direction: rtl;
+}
+
+.txt-title-news{
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+}
+
+.txt-note{
+    direction: rtl;
+    text-align: center;
+    color: white;
+    margin-top: 2rem;
+}
+
+.btn-news{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+.txt-social{
+    text-align: center;
+    margin-top: 5rem;
+}
+.txt-social-call2{
+    text-align: center;
+    margin-top: 5rem;
+    color: white;
+    font-size: 32px;
+    text-shadow: 0 2px 3px black;
+}
+
+.txt-social-call{
+    text-align: center;
+    font-size: 22px;
+    margin-top: 5rem;
+}
+
+.telegram{
+    background-image: url(../img/telegram.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.instagram{
+    background-image: url(../img/instagram.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.instagram img{
+    width: 119px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.instagram h3{
+    color: white;
+    background-color: rgba(0,0,3,0.5);
+    text-align: center;
+    border-radius: 9px;
+    width: 338px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.instagram h4{
+    color: white;
+    background-color: rgba(0,0,3,0.5);
+    text-align: center;
+    direction: rtl;
+    border-radius: 9px;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.telegram img{
+    width: 119px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+}
+
+.detail-suumer{
+    text-align: right;
+    background: white;
+    border-radius: .25rem;
+}
+
+details[open] summary ~ * {
+  animation: sweep .5s ease-in-out;
+}
+
+@keyframes sweep {
+  0%    {opacity: 0; transform: translateX(-10px)}
+  100%  {opacity: 1; transform: translateX(0)}
+}
+
+.detail-suumer a{
+   color: #757575;
+}
+
+.telegram h3{
+    color: white;
+    background-color: rgba(0,0,3,0.5);
+    text-align: center;
+    border-radius: 9px;
+    width: 338px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.telegram h4{
+    color: white;
+    background-color: rgba(0,0,3,0.5);
+    text-align: center;
+    direction: rtl;
+    border-radius: 9px;
+    width: 70%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.moj img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #303745;
+}
+
+.comment-post{
+    width: 100%;
+    padding: 15px;
+    height: auto;
+    box-shadow: 0 0 19px #d7d7d7;
+    margin: 35px 18px;
+    border-radius: 13px;
+    background-color: white;
+}
+
+/*main*/
+/*footer*/
+.bg-light{
+    background-color: #303745 !important;
+    color: white;
+}
+
+.Erorr{
+    color: #ae3131;
+    background: #f9d6d6;
+    padding: 10px 0;
+    border-radius: 3px;
+    border-right: 3px solid;
+}
+
+
+@media screen and (max-width: 900px){
+    .cardeee{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+    .login-design-profile{
+        display: block;
+    }
+
+    .profile-style{
+        width: 100%;
+        padding: 10px;
+        height: 28vh;
+    }
+    .profile-style img{
+        width: 25%;
+        float: right;
+    }
+
+    .profile-text{
+        width: 100%;
+        display: block;
+        height: 43vh;
+    }
+
+    .to-profile{
+         display: block;
+    }
+
+}

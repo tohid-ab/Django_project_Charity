@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>ورود</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    </main>
+    <div class="wrapper-profile">
+        <form action="" method="post" class="login-design-profile" enctype="multipart/form-data">
+            {% csrf_token %}
+                <div style="content-visibility: hidden;">{{u_form}}</div>
+                <div class="profile-style">{% render_field p_form.image|add_class:"form-control" id='formFile' %}</div>
+            <div class="profile-text">
+                <button type="submit" value="submit" class="btn btn-primary">ویرایش</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}
+</body>
+</html>

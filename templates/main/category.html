@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <h2>خبر های خیریه</h2>
+            </div>
+            <br>
+            <br>
+        </div>
+    </div>
+    <div class='main-news'>
+        <div class='to-main-news1'>
+                <div class="comment-post">
+                    <p>{{category_post.title}}</p>
+                    <p>{{category_post.body|safe}}</p>
+                </div>
+                <div class="comment-post">
+                <h3>کامنت ها:</h3><br>
+                    {% for comment in category_post.comments.all %}
+                        <p>
+                        <span class="font-weight-bold">
+                        {{ comment.author }} &middot;
+                        </span>
+                        {{ comment }}
+                        </p>
+
+                    {% endfor %}
+
+                </div>
+                        <!-- Card -->
+        </div>
+        <div class='to-main-news2'>
+            <div class='search-box'>
+                <h5>جستجو کردن</h5>
+                <form class="example" method='GET' action="{% url 'search' %}" style="max-width:300px">
+                <input type="text" placeholder="جستجو کردن ..." name="q">
+                <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+            </div>
+            <div class='search-box'>
+                <h5> دسته بندی ها</h5>
+                {% for cate in category %}
+                <h6><a href="{{cate.get_absolute_url}}">{{cate.name}}</a></h6>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock content %}

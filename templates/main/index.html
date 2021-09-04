@@ -1,0 +1,143 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+    <main>
+        <div class="box-body">
+            <div class="txt-name">
+                <img src="{% static 'img/img-logo.png' %}" alt="">
+                <p>خیریه دستان مهربان کوی رضوان</p>
+            </div>
+            <br>
+            <div class="txt-ash">
+                <p>!ابتدا با دستان مهربان کوی رضوان آشنا شوید و اگر دوست داشتید به لبخند کودکان نیازمند هم کمک کنید</p>
+            </div>
+            <br>
+            <br>
+            <div class="btn-about">
+                    <div class="row">
+                        <div class="col-sm-4">
+                        </div>
+                        <div class="col-sm-4 text-center">
+                            <a href="#"><button type="button" class="btn btn-default btn-rounded"><i class="fas fa-shopping-cart"></i> صدقه آنلاین</button></a>
+                            <a href="#"><button type="button" class="btn btn-primary btn-rounded"><i class="fas fa-expand-arrows-alt"></i> بیشتر بدانید</button></a>
+                        </div>
+                        <div class="col-sm-4"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-rezvan">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12">
+                        <p class="txt-moassese">فعالیت های مهم موسسه <i class="fas fa-address-book" style="color: #5dc2aa"></i></p>
+                            <br />
+                        <p class="txt-kheyriye"> <span style="background: #5dc2aa;color: white;"> خیریه </span>دستان مهربان کوی رضوان  </p>
+                        <br />
+                        <p class="progces">کمک به راه اندازی مشاغل کوچک و خانگی </p>
+                        <div class="progress" style="width: 66%;margin-left: auto;direction: rtl;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br />
+                        <p class="progces">اهداء سبد کالا </p>
+                        <div class="progress" style="width: 66%;margin-left: auto;direction: rtl;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br />
+                        <p class="progces">کمک هزینه امور تحصیلی </p>
+                        <div class="progress" style="width: 66%;margin-left: auto;direction: rtl;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br />
+                        <p class="progces">خدمات پزشکی و درمانی </p>
+                        <div class="progress" style="width: 66%;margin-left: auto;direction: rtl;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                        <br />
+                        <p class="progces">تهیه جهیزیه </p>
+                        <div class="progress" style="width: 66%;margin-left: auto;direction: rtl;">
+                            <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                </div>
+                <div class="col-lg-6 col-sm-12">
+                    <img src="{% static 'img/img-logo.png' %}" alt="" class="image-logo">
+                     <p class="icones"><i class="fas fa-circle" style="color: #5dc2aa;font-size: 12px;"></i></p>
+                      <h3 class="tafrif">خیریه دستان مهربان کوی رضوان در سال 1397 تاسیس و پس از دریافت <br>مجوز های لازم در حیطه های زیر فعالیت خود را آغاز نمود:</h3>
+                    <ul>
+                        <li class="txt-li">1- کمک به نیازمندان در قالب سبدکالا</li>
+                        <li class="txt-li">2- کمک هزینه امور تحصیلی برای نیازمندان</li>
+                        <li class="txt-li">3- انجام امور در جهت بسط فرهنگ اسلامی اعم از برگزاری مراسمات مذهبی، چاپ و نشر مطالب فرهنگی مذهبی در حوزه رسانه و کمک به هیئات و کانون‌های فرهنگی مذهبی.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="news">
+            <div class="row">
+                <div class="col-12 to-news">
+                    <h2 class="txt-title-news">اخبار و گزارشات خیریه دستان مهربان کوی رضوان</h2>
+                    <h5 class="txt-note">با هدف شفا‌ف‌سازی فعالیت‌های خیریه و اطلاع‌رسانی محل خرج‌کرد خیرین محترم،<br>
+                        آخرین گزارشات فعالیت‌های خیریه راخدمتتان ارائه می‌نمائیم.</h5>
+                    <p class="icones"><i class="fas fa-circle" style="color: #5dc2aa;font-size: 12px;margin-top: 2rem;"></i></p>
+                    <!-- Card deck -->
+                    <div class="card-deck">
+<!--                        <div class="alert alert-danger" role="alert" style="margin: auto;width: 50%;text-align: end;">-->
+<!--خبری یافت نشد-->
+<!--                        </div>-->
+                        <!-- Card -->
+                        {% for news in post %}
+                        <div class="card mb-4">
+
+                            <div class="view overlay">
+                                <img class="card-img-top" src="{{ news.image.url }}" alt="Card image cap">
+                                     {% for foo in news.daste.all %}
+                                        <p class='category'>{{foo.name}}</p>
+                                     {% endfor %}
+                                <a href="#!">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+
+                            <div class="card-body">
+
+                                <h4 class="card-title txt-box">{{news.title}}</h4>
+
+                                <p class="card-text">{{news.body|truncatechars:50}}</p>
+                                <a href="{{news.get_absolute_url}}"><button type="button" class="btn btn-light-blue btn-md">مشاهده </button></a>
+
+                            </div>
+
+                        </div>
+                        {% endfor %}
+                        <!-- Card -->
+
+                    </div>
+                    <!-- Card deck -->
+                    <a href="{% url 'news' %}"><button type="button" class="btn btn-primary btn-rounded btn-news">همه گزارشات</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="social-network">
+            <div class="row">
+                <div class="col-12 to-social">
+                        <h2 class="txt-social">خیریه دستان مهربان کوی رضوان در شبکه‌های اجتماعی</h2>
+                        <p class="icones"><i class="fas fa-circle" style="color: #5dc2aa;font-size: 12px;margin-top: 2rem;"></i></p>
+                </div>
+                <div class="col-lg-6 col-sm-12 telegram">
+                    <img src="img/svg/icons8-telegram-app.svg" alt="">
+                    <h3>تلگرام دستان مهربان کوی رضوان</h3><br/>
+                    <h4>در تلگرام خیریه شعف عضو شوید
+                        <br>
+                        تا به اشاعه فرهنگ خوبی و مهربانی کمک کرده باشید.</h4>
+                </div>
+                <div class="col-lg-6 col-sm-12 instagram">
+                    <img src="img/svg/icons8-instagram.svg" alt="">
+                    <h3>اینستاگرام دستان مهربان کوی رضوان</h3><br/>
+                    <h4>در اینستاگرام خیریه شعف عضو شوید
+                        <br>
+                        تا به اشاعه فرهنگ خوبی و مهربانی کمک کرده باشید.</h4>
+                </div>
+
+            </div>
+        </div>
+    </main>
+{% endblock content %}    
